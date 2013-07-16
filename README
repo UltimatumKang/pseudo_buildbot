@@ -1,3 +1,13 @@
+TO DO: EVERYTHING ELSE MINUS CHANGELOG SCRIPTS
+
+TO USE: Must be in root directory of working directory. If you don't know what 
+I mean then.... idk bro.
+
+Type "bash ./vendor/ukg/bot/changelog_gen.sh"
+
+It will ask you for a start date, enter whatever start date you want. in the 
+following format 00/00/0000 - 07/15/2013 for example
+	
 	Pseudo Buildbot
 
 Pseudo is more than the pseudo build bot she started off as, but she likes the
