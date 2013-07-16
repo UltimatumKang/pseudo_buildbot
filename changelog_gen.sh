@@ -23,8 +23,8 @@ do
     else
         # Prepend group project ownership to each project.
         origin=`grep "$project" $rdir/.repo/manifest.xml | awk {'print $4'} | cut -f2 -d '"'`
-        if [ "$origin" = "aokp" ]; then
-            proj_credit=AOKP
+        if [ "$origin" = "uk" ]; then
+            proj_credit=UltimatumKang
         elif [ "$origin" = "aosp" ]; then
             proj_credit=AOSP
         elif [ "$origin" = "cm" ]; then

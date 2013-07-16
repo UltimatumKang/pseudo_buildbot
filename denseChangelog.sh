@@ -42,20 +42,6 @@ do
 done
 echo "found endDate:" ${endDate}
 
-# if no date supplied then we look on goo.im for update date
-if [ -z "${startDateRange}" ]; then
-    echo "No date supplied looking on Goo.Im for latest update date"
-    echo -e "To supply a custom date use flag -d MM/dd/yyyy\n"
-    cd ${jsonParser}
-    json=$(curl 'http://goo.im/json2&path=/devs/aokp/toro')
-    echo -e "\n"
-    javac -cp .:json-org.jar LastUpdateFinder.java
-    java -cp .:json-org.jar LastUpdateFinder ${json}
-    startDateRange=$(cat last_update_time)
-    rm LastUpdateFinder.class last_update_time
-    cd ${rdir}
-fi
-
 # remove old changelogs
 rm -q ${rdir}/denseChangelog_${today}.json > /dev/null 2>&1;
 rm -q ${rdir}/jsonChangelog_${today}.json > /dev/null 2>&1;
@@ -75,8 +61,8 @@ do
     else
         # Prepend group project ownership to each project.
         origin=`grep "${project}" ${rdir}/.repo/manifest.xml | awk {'print $4'} | cut -f2 -d '"'`
-        if [ "${origin}" = "aokp" ]; then
-            proj_credit=AOKP
+        if [ "${origin}" = "uk" ]; then
+            proj_credit=UltimatumKang
         elif [ "${origin}" = "aosp" ]; then
             proj_credit=AOSP
         elif [ "${origin}" = "cm" ]; then
