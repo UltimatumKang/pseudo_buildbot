@@ -36,7 +36,7 @@ do
         echo "$proj_credit Project name: $project" >> "$rdir"/Changelog_$cdate.txt
         echo "$log" | while read line
         do
-             echo "  •$line" >> "$rdir"/Changelog_$cdate.txt
+             echo "  - $line" >> "$rdir"/Changelog_$cdate.txt
         done
         echo "" >> "$rdir"/Changelog_$cdate.txt
     fi
